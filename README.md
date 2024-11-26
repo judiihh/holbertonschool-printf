@@ -50,12 +50,12 @@ The creation of the _printf()_ function is being done using the C programming la
 This project was completed as a team effort by:
 
 **Judith Espinal:** [GitHub Profile](https://github.com/judiihh)
-[LinkedIn: Judith Espinal](https://www.linkedin.com/in/judithespinal12)
+[LinkedIn Profile](https://www.linkedin.com/in/judithespinal12)
 
 Hello, I'm Judith Espinal, one of the developers behind this project. I invite you to explore my work and connect with me professionally on LinkedIn. I look forward to networking and sharing ideas with you!
 
 **Giann Pabon:** [GitHub Profile](https://github.com/GiannPabon)
-[LinkedIn: Giann Pabon](https://www.linkedin.com/in/giannpabon/)
+[LinkedIn Profile](https://www.linkedin.com/in/giannpabon/)
 
 Hey, 
 
