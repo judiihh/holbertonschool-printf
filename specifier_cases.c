@@ -1,33 +1,41 @@
 #include "main.h"
+#include <stdarg.h>
+#include <unistd.h>
 
 /**
  * specifier_cases - Handles the specifiers for the _printf function.
+ * @spec: The format specifier
+ * @args: The list of arguments.
  *
- * @specifier: The character specifying the format type.
- * @args: Argument list.
- *
- * Return: Number of characters printed.
+ * Return: The number of characters printed.
  */
-
-
-int specifier_cases(char specifier, va_list args)
+int specifier_cases(char spec, va_list args)
 {
-	char c;
+	int count = 0;
+	char c, *s;
 
-	switch (specifier)
+	if (spec == 'c')
 	{
-		case 'c':
-			c = va_arg(args, int);
-			return (write(1, &c, 1));
-		case 's':
-			return (string(va_arg(args, char *)));
-		case '%':
-			return (write(1, "%", 1));
-		case 'd':
-		case 'i':
-			return (integer(va_arg(args, int)));
-		default:
-			write(1, "%", 1);
-			return (write(1, &specifier, 1));
+		c = (char)va_arg(args, int);
+		count += write(1, &c, 1);
 	}
+	else if (spec == 's')
+	{
+		s = va_arg(args, char *);
+		if (!s)
+			s = "(null)";
+		while (*s)
+			count += write(1, s++, 1);
+	}
+	else if (spec == '%')
+	{
+		count += write(1, "%", 1);
+	}
+	else
+	{
+		count += write(1, "%", 1);
+		count += write(1, &spec, 1);
+	}
+	
+	return (count);
 }
