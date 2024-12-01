@@ -26,8 +26,10 @@ int specifier_cases(char specifier, va_list args)
 
 		default:
 			{
-				char invalid[] = {'%', specifier};
-
+				char invalid[2];
+				invalid[0] = '%';
+				invalid[1] = specifier;
+				write(1, invalid, 2);
 				return (write(1, invalid, 2));
 			}
 	}
