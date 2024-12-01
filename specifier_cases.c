@@ -9,16 +9,16 @@
  * Return: Number of characters printed.
  */
 
+
 int specifier_cases(char specifier, va_list args)
 {
+	char c;
+
 	switch (specifier)
 	{
 		case 'c':
-			{
-				char c = va_arg(args, int);
-
-				return (write(1, &c, 1));
-			}
+			c = va_arg(args, int);
+			return (write(1, &c, 1));
 		case 's':
 			return (string(va_arg(args, char *)));
 		case '%':
@@ -26,15 +26,8 @@ int specifier_cases(char specifier, va_list args)
 		case 'd':
 		case 'i':
 			return (integer(va_arg(args, int)));
-
 		default:
-			{
-				char invalid[2];
-				invalid[0] = '%';
-				invalid[1] = specifier;
-				write(1, invalid, 2);
-				return (write(1, invalid, 2));
-			}
+			write(1, "%", 1);
+			return (write(1, &specifier, 1));
 	}
 }
-

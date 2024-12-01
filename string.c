@@ -10,18 +10,16 @@
 
 int string(char *str)
 {
-	int len = 0;
+	int count = 0;
 
-	if (!str)
-	{
+	if (str == NULL)
 		str = "(null)";
-	}
 
-	while (str[len])
+	while (*str)
 	{
-		write(1, &str[len++], 1);
+		count += write(1, str, 1);
+		str++;
 	}
-
-	return (len);
+	return (count);
 }
 

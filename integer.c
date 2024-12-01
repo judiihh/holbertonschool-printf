@@ -9,27 +9,21 @@
  */
 int integer(int n)
 {
-	unsigned int num;
-	char digit;
-	int count = 0;
+	unsigned int num = (n < 0) ? -n : n;
+	char buffer[10];
+	int i = 0, count = 0;
 
 	if (n < 0)
-	{
 		count += write(1, "-", 1);
-		num = -n;
-	}
 
-	else
-	{
-		num = n;
-	}
+	do {
+		buffer[i++] = (num % 10) + '0';
+		num /= 10;
+	} while (num > 0);
 
-	if (num / 10)
-	{
-		count += integer(num / 10);
-	}
-	digit = (num % 10) + '0';
-	count += write(1, &digit, 1);
+	while (i--)
+		count += write(1, &buffer[i], 1);
+
 	return (count);
 }
 
