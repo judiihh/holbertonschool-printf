@@ -23,6 +23,9 @@ int specifier_cases(char specifier, va_list args)
 			return (string(va_arg(args, char *)));
 		case '%':
 			return (write(1, "%", 1));
+		case 'd':
+		case 'i':
+			return (integer(va_arg(args, int)));
 
 		default:
 			{

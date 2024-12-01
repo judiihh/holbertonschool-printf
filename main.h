@@ -10,6 +10,8 @@
 int _printf(const char *format, ...);
 int specifier_cases(char specifier, va_list args);
 int string(char *str);
+int integer(int n);
+
 
 #endif
 
