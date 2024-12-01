@@ -36,6 +36,6 @@ int specifier_cases(char spec, va_list args)
 		count += write(1, "%", 1);
 		count += write(1, &spec, 1);
 	}
-	
+
 	return (count);
 }
