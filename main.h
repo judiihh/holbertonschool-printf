@@ -8,11 +8,11 @@
 #include <limits.h>
 
 int _printf(const char *format, ...);
-int specifier_cases(char specifier, va_list args);
+int print_char(va_list args);
+int print_string(va_list args);
+int specifier_cases(char spec, va_list args);
 int string(char *str);
 int integer(int n);
 int _putchar(char c);
 
-
 #endif
-
