@@ -42,7 +42,7 @@ All the files that were used are compiled using:
 ## Language
 The creation of the _printf()_ function is being done using the C programming language. As a low-level language, C gives us the ability to build and control functions from the ground up while defining their specific outputs. Currently, we are in the foundational phase of learning C, and this project serves as a way to test out understanding by implementing _printf()_ entirely from scratch.
 
-## Challanges
+## Challenges
 
 ## Reference
 
@@ -57,5 +57,5 @@ Hello, I'm Judith Espinal, one of the developers behind this project. I invite y
 **Giann Pabon:** [GitHub Profile](https://github.com/GiannPabon)
 [LinkedIn Profile](https://www.linkedin.com/in/giannpabon/)
 
-Hey, 
+Hi there! I'm Giann Pabon, a passionate developer and contributor to this project. Feel free to check out my work and connect with me on LinkedIn. I’m always excited to network and exchange ideas with fellow professionals!
 
