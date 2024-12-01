@@ -28,6 +28,10 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (format[i] == '\0')
+            {
+                break;
+            }
 			count += specifier_cases(format[i], args);
 		}
 
