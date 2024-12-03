@@ -42,10 +42,6 @@ All the files that were used are compiled using:
 ## Language
 The creation of the _printf()_ function is being done using the C programming language. As a low-level language, C gives us the ability to build and control functions from the ground up while defining their specific outputs. Currently, we are in the foundational phase of learning C, and this project serves as a way to test out understanding by implementing _printf()_ entirely from scratch.
 
-## Challenges
-
-## Reference
-
 ## Contributors
 This project was completed as a team effort by:
 
