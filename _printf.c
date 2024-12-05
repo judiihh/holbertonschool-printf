@@ -42,14 +42,18 @@ int _printf(const char *format, ...)
 	int count = 0;
 
 	if (!format)
-		return (-1);
-
+		return (-1); /* Return -1 for NULL format */
 	va_start(args, format);
-	for (; *format; format++)
+	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
+			if (!*format) /* Ensure format doesn't end abruptly after '%' */
+			{
+				va_end(args);
+				return (-1); /* Return -1 for incomplete specifier */
+			}
 			if (*format == 'c')
 				count += print_char(args);
 			else if (*format == 's')
@@ -57,11 +61,19 @@ int _printf(const char *format, ...)
 			else if (*format == '%')
 				count += write(1, "%", 1);
 			else
+			{
+				/* Print unknown specifier as "%<char>" */
 				count += write(1, "%", 1) + write(1, format, 1);
+			}
 		}
 		else
+		{
+			/* Print regular characters */
 			count += write(1, format, 1);
+		}
+		format++;
 	}
 	va_end(args);
 	return (count);
 }
+
