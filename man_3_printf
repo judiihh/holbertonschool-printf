@@ -64,7 +64,8 @@ Buffer handling like the standard printf.
 Flags, field width, precision, or length modifiers.
 
 .SH AUTHOR
-Written by [Judith Espinal & Giann Pabon].
+Written by [Judith Espinal]
+and [Giann Pabon].
 .SH SEE ALSO
 .BR printf (3),
 .BR write (2)
